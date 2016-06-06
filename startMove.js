@@ -1,3 +1,11 @@
+ function getStyle(obj, attr) {
+    if (obj.currentStyle) {
+        return obj.currentStyle[attr];
+    } else {
+        return getComputedStyle(obj, false)[attr];
+    }
+}
+
 function startMove(obj,attr,itarget){
 	clearInterval(obj.timer);
 	obj.timer = setInterval(function(){
